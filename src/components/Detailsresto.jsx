@@ -112,24 +112,45 @@ export default function Detailresto() {
 
 <div className="commande">
   <h3>Votre commande</h3>
-       {panier.map((plat, i) => (
-<div className="panierdetail">
 
-          <div key={i} className="namemenu">{plat.itemName}</div>
-          <div > {plat.itemPrice} MAD</div>
-           <div>
+  {panier.length === 0 ? (
+  <>
+      <img src="../images/panier1.png" width={200}  style={{
+        
+maxWidth: "100%", 
+      height: "auto", 
+      marginTop: "40px", 
+      display: "block", 
+      marginLeft: "auto", 
+      marginRight: "auto"         
+        }}/>
+    <h2 style={{ textAlign: "center" ,fontSize:"20px",marginTop:"70px"}}>
+      Votre panier est vide</h2>
+      </>
+  ) : (
+    <>
+      {panier.map((plat, i) => (
+        <div className="panierdetail" key={i}>
+          <div className="namemenu">{plat.itemName}</div>
+          <div>{plat.itemPrice} MAD</div>
+          <div>
             <button 
-  onClick={() => supprimerDuPanier(plat.itemID)} 
-  style={{ color: "red", border: "none", background: "transparent", cursor: "pointer" }}
->
-  X
-</button></div>
+              onClick={() => supprimerDuPanier(plat.itemID)} 
+              style={{ color: "red", border: "none", background: "transparent", cursor: "pointer" }}
+            >
+              X
+            </button>
+          </div>
+        </div>
+      ))}
+
+      <div className="prixtotal">
+        Commander pour{" "}
+        {panier.reduce((total, plat) => total + plat.itemPrice, 0)} MAD
+      </div>
+    </>
+  )}
 </div>
-        ))}
-         <div className="prixtotal">
-    Commander pour{" "}
-    {panier.reduce((total, plat) => total + plat.itemPrice, 0)} MAD
-  </div>
-</div>
+
 </div>
 );}

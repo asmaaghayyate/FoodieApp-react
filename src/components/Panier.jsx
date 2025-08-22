@@ -4,7 +4,18 @@ export default function Panier() {
   const { panier, supprimerDuPanier, viderPanier } = useCartStore();
 
   if (panier.length === 0) {
-    return <div className="paniervide"> <h2 style={{ textAlign: "center" }}>Votre panier est vide </h2></div>;
+    return (<div className=""> 
+    <div className="commande1">
+      <img src="../images/panier1.png" width={200} 
+       style={{ marginTop:"40px",marginLeft:"680px"}}/>
+    <h2 style={{ textAlign: "center" ,marginTop:"70px"}}>
+      Votre panier est vide</h2>
+      </div>
+    
+    </div>
+
+      
+    )
   }
 
   return (

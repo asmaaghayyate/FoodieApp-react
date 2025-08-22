@@ -343,7 +343,7 @@ padding-top: 50px;
   font-family: Arial, Tahoma, sans-serif;
   font-weight: bold;
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 30px;
   width: 100%;
   max-width: 400px;
   text-align: center;
@@ -356,6 +356,22 @@ padding-top: 50px;
 .commande h3 {
   color: hsl(100, 48%, 17%);
 }
+
+
+.commande1 {
+    border-top:1px solid #e4e6e0;
+}
+
+.commande1 h2 {
+  color: hsl(100, 48%, 17%);
+  font-size: 70px;
+}
+
+
+
+
+
+
 
 .prixtotal {
   padding: 10px;
